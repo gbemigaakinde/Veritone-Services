@@ -3,320 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Veritone Services – Words that win. Brands that speak.</title>
-    <meta name="description" content="Veritone Services is a premium Nigerian writing and communications agency specializing in ghostwriting, editing, corporate communications, book publishing, and social media management.">
-    <meta property="og:title" content="Veritone Services">
-    <meta property="og:description" content="Words that win. Brands that speak. Premium writing and communications services in Nigeria.">
-    <meta property="og:image" content="https://via.placeholder.com/1200x630/FFFFFF/111827?text=Veritone+Services">
-    <meta property="og:url" content="https://veritoneservices.com">
-    <meta property="og:type" content="website">
-
-    <!-- Favicon -->
-    <link rel="icon" href="https://via.placeholder.com/32/FFFFFF/111827?text=V" type="image/png">
-
-    <!-- Google Fonts: Playfair Display for headings, Inter for body -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Tailwind CSS CDN -->
+    <title>Veritone Services – Words that Win. Brands that Speak.</title>
+    <meta name="description" content="Premium writing and communications agency in Nigeria. Ghostwriting, editing, corporate comms, publishing, and more.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        primary: '#111827', // Dark text
-                        accent: '#D4AF37',  // Softer gold for subtle luxury
-                        bg: '#FFFFFF',
+                        primary: '#111827',
+                        accent: '#D4AF37',
                         light: '#F9FAFB',
                     },
                     fontFamily: {
-                        serif: ['"Playfair Display"', 'serif'],
+                        serif: ['Playfair Display', 'serif'],
                         sans: ['Inter', 'sans-serif'],
                     },
                 },
             },
         }
     </script>
-
-    <!-- Alpine.js for interactions -->
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-    <!-- Formspree for contact form (replace with your Formspree endpoint) -->
-    <script src="https://formspree.io/js/formspree-form.js"></script>
-
     <style>
         body { background-color: #FFFFFF; color: #111827; }
-        .hero-bg { background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=2070'); background-size: cover; background-position: center; }
-        .floating-wa { position: fixed; bottom: 20px; right: 20px; z-index: 50; }
     </style>
 </head>
 <body class="font-sans antialiased">
 
-    <!-- Floating WhatsApp Button (minimal) -->
-    <a href="https://wa.me/2341234567890" target="_blank" class="floating-wa bg-green-500 text-white rounded-full p-3 shadow-lg hover:bg-green-600 transition">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.446.099-.149.05-.248-.025-.347-.074-.099-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.884 3.488"/></svg>
-    </a>
+    <!-- Shared Navigation -->
+<nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-100 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+        <!-- Logo -->
+        <a href="index.html" class="text-3xl font-serif text-primary font-bold tracking-tight hover:text-accent transition">
+            Veritone
+        </a>
 
-    <!-- Minimal Navigation -->
-    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Logo -->
-            <a href="#hero" class="text-3xl font-serif text-primary font-semibold tracking-tight hover:text-accent transition">
-                Veritone
-            </a>
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex items-center space-x-10 text-base font-medium">
+            <li><a href="index.html" class="text-primary hover:text-accent transition">Home</a></li>
+            <li><a href="about.html" class="text-primary hover:text-accent transition">About</a></li>
+            <li><a href="services.html" class="text-primary hover:text-accent transition">Services</a></li>
+            <li><a href="portfolio.html" class="text-primary hover:text-accent transition">Portfolio</a></li>
+            <li><a href="contact.html" class="text-primary hover:text-accent transition">Contact</a></li>
+            <li>
+                <a href="https://gbemigaakinde.github.io/Communication-Course/" target="_blank" class="bg-accent text-white px-8 py-3 rounded-full font-semibold hover:bg-yellow-600 transition shadow-md">
+                    Enroll in Course
+                </a>
+            </li>
+        </ul>
 
-            <!-- Desktop Menu -->
-            <ul class="hidden md:flex items-center space-x-8 text-base font-medium">
-                <li><a href="#hero" class="text-primary hover:text-accent transition">Home</a></li>
-                <li><a href="#about" class="text-primary hover:text-accent transition">About</a></li>
-                <li><a href="#services" class="text-primary hover:text-accent transition">Services</a></li>
-                <li><a href="#portfolio" class="text-primary hover:text-accent transition">Portfolio</a></li>
-                <li><a href="#testimonials" class="text-primary hover:text-accent transition">Testimonials</a></li>
-                <li><a href="#process" class="text-primary hover:text-accent transition">Process</a></li>
-                <li><a href="#contact" class="text-primary hover:text-accent transition">Contact</a></li>
+        <!-- Mobile Menu (Alpine.js) -->
+        <div x-data="{ open: false }" class="md:hidden">
+            <button @click="open = !open" class="text-primary focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+            <ul x-show="open" @click.away="open = false" class="absolute top-20 right-4 bg-white border border-gray-200 rounded-xl py-6 px-8 shadow-2xl min-w-64 space-y-4">
+                <li><a href="index.html" class="block text-primary hover:text-accent">Home</a></li>
+                <li><a href="about.html" class="block text-primary hover:text-accent">About</a></li>
+                <li><a href="services.html" class="block text-primary hover:text-accent">Services</a></li>
+                <li><a href="portfolio.html" class="block text-primary hover:text-accent">Portfolio</a></li>
+                <li><a href="contact.html" class="block text-primary hover:text-accent">Contact</a></li>
                 <li>
-                    <a href="https://gbemigaakinde.github.io/Communication-Course/" target="_blank"
-                       class="bg-accent text-white px-6 py-2 rounded-full font-semibold hover:bg-yellow-600 transition">
-                        Course
+                    <a href="https://gbemigaakinde.github.io/Communication-Course/" target="_blank" class="block bg-accent text-white text-center py-3 rounded-full hover:bg-yellow-600">
+                        Enroll in Course
                     </a>
                 </li>
             </ul>
-
-            <!-- Mobile Menu Toggle -->
-            <div x-data="{ open: false }" class="md:hidden">
-                <button @click="open = !open" class="text-primary focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2"/>
-                    </svg>
-                </button>
-
-                <ul x-show="open" @click.away="open = false"
-                    class="absolute top-16 right-4 bg-white border border-gray-200 rounded-xl py-6 px-8 shadow-xl min-w-64">
-                    <li class="mb-4"><a href="#hero" class="block text-primary hover:text-accent">Home</a></li>
-                    <li class="mb-4"><a href="#about" class="block text-primary hover:text-accent">About</a></li>
-                    <li class="mb-4"><a href="#services" class="block text-primary hover:text-accent">Services</a></li>
-                    <li class="mb-4"><a href="#portfolio" class="block text-primary hover:text-accent">Portfolio</a></li>
-                    <li class="mb-4"><a href="#testimonials" class="block text-primary hover:text-accent">Testimonials</a></li>
-                    <li class="mb-4"><a href="#process" class="block text-primary hover:text-accent">Process</a></li>
-                    <li class="mb-4"><a href="#contact" class="block text-primary hover:text-accent">Contact</a></li>
-                    <li>
-                        <a href="https://gbemigaakinde.github.io/Communication-Course/" target="_blank"
-                           class="block bg-accent text-white text-center py-3 rounded-full font-semibold hover:bg-yellow-600">
-                            Enroll in Course
-                        </a>
-                    </li>
-                </ul>
-            </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="hero-bg min-h-screen flex items-center justify-center text-center relative">
-        <div class="absolute inset-0 bg-white/60"></div>
-        <div class="relative z-10 max-w-4xl mx-auto px-6">
-            <h1 class="text-5xl md:text-7xl font-serif text-primary mb-6">Words that win.<br>Brands that speak.</h1>
-            <p class="text-2xl md:text-3xl text-gray-700 mb-10">Premium writing & communications agency in Nigeria</p>
-            <p class="text-lg text-gray-600 mb-12">@veritoneng on Instagram</p>
+    <section class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-light to-white"></div>
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center">
+            <h1 class="text-6xl md:text-8xl font-serif text-primary mb-8 leading-tight">
+                Words that win.<br>
+                <span class="text-accent">Brands that speak.</span>
+            </h1>
+            <p class="text-2xl md:text-3xl text-gray-700 mb-12 max-w-3xl mx-auto">
+                Premium writing & communications agency crafting narratives that elevate leaders and brands in Nigeria and beyond.
+            </p>
             <div class="flex flex-col md:flex-row gap-6 justify-center">
-                <a href="#contact" class="bg-primary text-white px-10 py-4 rounded-full font-medium hover:bg-gray-800 transition">Get a Free Quote</a>
-                <a href="#portfolio" class="border-2 border-primary text-primary px-10 py-4 rounded-full font-medium hover:bg-primary hover:text-white transition">View Portfolio</a>
+                <a href="contact.html" class="bg-primary text-white px-12 py-5 rounded-full font-medium text-xl hover:bg-gray-800 transition">Get a Free Quote</a>
+                <a href="services.html" class="border-2 border-primary text-primary px-12 py-5 rounded-full font-medium text-xl hover:bg-primary hover:text-white transition">Explore Services</a>
             </div>
         </div>
     </section>
 
-    <!-- Trust Signals -->
-    <section class="py-16 bg-light">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-            <div>
-                <p class="text-5xl font-serif text-accent">500+</p>
-                <p class="text-lg mt-2 text-gray-600">Projects Delivered</p>
-            </div>
-            <div>
-                <p class="text-5xl font-serif text-accent">10+</p>
-                <p class="text-lg mt-2 text-gray-600">Years Combined Experience</p>
-            </div>
-            <div>
-                <p class="text-5xl font-serif text-accent">100%</p>
-                <p class="text-lg mt-2 text-gray-600">Client Satisfaction</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-24">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="text-5xl font-serif text-primary mb-8">About Veritone Services</h2>
-                <p class="text-lg mb-6 text-gray-700">Veritone Services is Nigeria's premier writing and communications agency, dedicated to crafting compelling narratives that elevate brands, leaders, and ideas.</p>
-                <p class="text-lg mb-6 text-gray-700">With a team of published authors and seasoned communicators, we deliver sophisticated, impactful content tailored for CEOs, politicians, professionals, and corporate brands.</p>
-                <p class="text-lg text-gray-700">Our mission: Transform ideas into powerful words that influence, inspire, and win.</p>
-            </div>
-            <div class="grid grid-cols-2 gap-6">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80" alt="Team" class="rounded-xl shadow-md">
-                <img src="https://images.unsplash.com/photo-1551836022-4c4c79ecde44?auto=format&fit=crop&q=80" alt="Team" class="rounded-xl shadow-md mt-8">
-                <img src="https://images.unsplash.com/photo-1522205408450-9a4c2d5b9c8a?auto=format&fit=crop&q=80" alt="Team" class="rounded-xl shadow-md">
-                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80" alt="Team" class="rounded-xl shadow-md mt-8">
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-24 bg-light">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-serif text-primary text-center mb-16">Our Services</h2>
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition">
-                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=200" alt="Ghostwriting" class="w-20 mb-6 mx-auto">
-                    <h3 class="text-2xl font-serif text-primary mb-4 text-center">Ghostwriting</h3>
-                    <p class="text-gray-600 mb-6 text-center">Books, speeches, articles – authored in your voice.</p>
-                    <a href="#contact" class="text-accent hover:underline block text-center">Learn More →</a>
-                </div>
-                <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition">
-                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=200" alt="Editing" class="w-20 mb-6 mx-auto">
-                    <h3 class="text-2xl font-serif text-primary mb-4 text-center">Editing & Proofreading</h3>
-                    <p class="text-gray-600 mb-6 text-center">Polished, error-free content ready for publication.</p>
-                    <a href="#contact" class="text-accent hover:underline block text-center">Learn More →</a>
-                </div>
-                <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition">
-                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=200" alt="Academic" class="w-20 mb-6 mx-auto">
-                    <h3 class="text-2xl font-serif text-primary mb-4 text-center">Academic Writing & Research</h3>
-                    <p class="text-gray-600 mb-6 text-center">Essays, theses, dissertations for students worldwide.</p>
-                    <a href="#contact" class="text-accent hover:underline block text-center">Learn More →</a>
-                </div>
-                <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition">
-                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=200" alt="Corporate" class="w-20 mb-6 mx-auto">
-                    <h3 class="text-2xl font-serif text-primary mb-4 text-center">Corporate Communications</h3>
-                    <p class="text-gray-600 mb-6 text-center">Reports, decks, white papers, press releases.</p>
-                    <a href="#contact" class="text-accent hover:underline block text-center">Learn More →</a>
-                </div>
-                <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition">
-                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=200" alt="Publishing" class="w-20 mb-6 mx-auto">
-                    <h3 class="text-2xl font-serif text-primary mb-4 text-center">Book Publishing</h3>
-                    <p class="text-gray-600 mb-6 text-center">Formatting, cover design, distribution.</p>
-                    <a href="#contact" class="text-accent hover:underline block text-center">Learn More →</a>
-                </div>
-                <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-lg transition">
-                    <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=200" alt="Social" class="w-20 mb-6 mx-auto">
-                    <h3 class="text-2xl font-serif text-primary mb-4 text-center">Social Media Management</h3>
-                    <p class="text-gray-600 mb-6 text-center">Strategic content for premium brands.</p>
-                    <a href="#contact" class="text-accent hover:underline block text-center">Learn More →</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-24">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-serif text-primary text-center mb-16">Portfolio</h2>
-            <div class="grid md:grid-cols-4 gap-6">
-                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80" alt="Book Cover" class="rounded-xl shadow-md hover:scale-105 transition">
-                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80" alt="Book Cover" class="rounded-xl shadow-md hover:scale-105 transition">
-                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80" alt="Book Cover" class="rounded-xl shadow-md hover:scale-105 transition">
-                <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80" alt="Book Cover" class="rounded-xl shadow-md hover:scale-105 transition">
-                <!-- Add more as needed -->
-            </div>
-            <div class="text-center mt-12">
-                <p class="text-xl text-gray-700 mb-8">Follow @veritoneng on Instagram for more</p>
-                <div class="grid grid-cols-3 gap-4 max-w-3xl mx-auto">
-                    <img src="https://images.unsplash.com/photo-1615751072497-5f5169febe17?auto=format&fit=crop&q=80" alt="IG Post" class="rounded-lg">
-                    <img src="https://images.unsplash.com/photo-1615751072497-5f5169febe17?auto=format&fit=crop&q=80" alt="IG Post" class="rounded-lg">
-                    <img src="https://images.unsplash.com/photo-1615751072497-5f5169febe17?auto=format&fit=crop&q=80" alt="IG Post" class="rounded-lg">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="py-24 bg-light">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-serif text-primary text-center mb-16">Client Testimonials</h2>
-            <div x-data="{ current: 0 }" class="relative max-w-4xl mx-auto">
-                <div class="overflow-hidden">
-                    <div class="flex transition-transform duration-500" :style="'transform: translateX(-' + current * 100 + '%)'">
-                        <div class="min-w-full text-center px-8">
-                            <p class="text-2xl italic mb-8 text-gray-700">"Veritone transformed my ideas into a bestselling book. Absolute professionals."</p>
-                            <p class="font-medium text-primary">Dr. Ada Eze</p>
-                            <p class="text-gray-600">CEO, Apex Group</p>
-                        </div>
-                        <!-- Add more testimonials -->
-                    </div>
-                </div>
-                <button @click="current = (current - 1 + 1) % 1" class="absolute left-0 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-md">←</button>
-                <button @click="current = (current + 1) % 1" class="absolute right-0 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-md">→</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process -->
-    <section id="process" class="py-24">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-serif text-primary text-center mb-16">Our Process</h2>
-            <div class="grid md:grid-cols-5 gap-8 text-center">
-                <div>
-                    <div class="bg-accent text-white w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold">1</div>
-                    <p class="text-xl font-medium">Consultation</p>
-                </div>
-                <div>
-                    <div class="bg-accent text-white w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold">2</div>
-                    <p class="text-xl font-medium">Planning & Outline</p>
-                </div>
-                <div>
-                    <div class="bg-accent text-white w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold">3</div>
-                    <p class="text-xl font-medium">Drafting</p>
-                </div>
-                <div>
-                    <div class="bg-accent text-white w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold">4</div>
-                    <p class="text-xl font-medium">Revisions</p>
-                </div>
-                <div>
-                    <div class="bg-accent text-white w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold">5</div>
-                    <p class="text-xl font-medium">Delivery</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Custom Quote -->
+    <!-- Quick Highlights (Teaser to pages) -->
     <section class="py-24 bg-light">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-5xl font-serif text-primary mb-8">Custom Pricing for Every Project</h2>
-            <p class="text-2xl text-gray-700 mb-12">Tailored to your needs – no one-size-fits-all.</p>
-            <a href="#contact" class="bg-primary text-white px-12 py-5 rounded-full text-2xl font-medium hover:bg-gray-800 transition">Get Your Custom Quote</a>
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+            <div class="text-center">
+                <h3 class="text-3xl font-serif text-accent mb-4">Ghostwriting Mastery</h3>
+                <p class="text-gray-700 mb-6">Your voice, our words – invisible excellence.</p>
+                <a href="services.html" class="text-accent hover:underline">Learn More →</a>
+            </div>
+            <div class="text-center">
+                <h3 class="text-3xl font-serif text-accent mb-4">Portfolio Highlights</h3>
+                <p class="text-gray-700 mb-6">Books, speeches, campaigns that inspired change.</p>
+                <a href="portfolio.html" class="text-accent hover:underline">View Portfolio →</a>
+            </div>
+            <div class="text-center">
+                <h3 class="text-3xl font-serif text-accent mb-4">Elite Communication Course</h3>
+                <p class="text-gray-700 mb-6">Transform into an influential leader.</p>
+                <a href="https://gbemigaakinde.github.io/Communication-Course/" target="_blank" class="text-accent hover:underline">Enroll Now →</a>
+            </div>
         </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="py-24">
-        <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-5xl font-serif text-primary text-center mb-16">Start Your Project Today</h2>
-            <form action="https://formspree.io/f/your-form-id" method="POST" class="grid gap-6">
-                <input type="text" name="name" placeholder="Full Name" required class="border border-gray-300 rounded-lg px-6 py-4 focus:outline-none focus:border-accent">
-                <input type="email" name="email" placeholder="Email" required class="border border-gray-300 rounded-lg px-6 py-4 focus:outline-none focus:border-accent">
-                <input type="tel" name="phone" placeholder="Phone" class="border border-gray-300 rounded-lg px-6 py-4 focus:outline-none focus:border-accent">
-                <select name="service" required class="border border-gray-300 rounded-lg px-6 py-4 focus:outline-none focus:border-accent">
-                    <option value="">Select Service</option>
-                    <option>Ghostwriting</option>
-                    <option>Editing & Proofreading</option>
-                    <option>Academic Writing & Research</option>
-                    <option>Corporate Communications</option>
-                    <option>Book Publishing</option>
-                    <option>Social Media Management</option>
-                </select>
-                <textarea name="details" placeholder="Project Details" rows="6" required class="border border-gray-300 rounded-lg px-6 py-4 focus:outline-none focus:border-accent"></textarea>
-                <select name="budget" class="border border-gray-300 rounded-lg px-6 py-4 focus:outline-none focus:border-accent">
-                    <option>Budget Range</option>
-                    <option>₦500,000 - ₦1M</option>
-                    <option>₦1M - ₦5M</option>
-                    <option>₦5M+</option>
-                </select>
-                <button type="submit" class="bg-accent text-white px-12 py-5 rounded-full text-xl font-medium hover:bg-yellow-600 transition">Submit Inquiry</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- Shared Footer -->
     <footer class="bg-white border-t border-gray-200 py-12">
         <div class="max-w-7xl mx-auto px-6 text-center">
             <h3 class="text-3xl font-serif text-primary mb-6">Veritone Services</h3>
@@ -325,7 +122,7 @@
                 <a href="https://instagram.com/veritoneng" class="text-2xl text-primary hover:text-accent transition">Instagram</a>
                 <a href="https://wa.me/2341234567890" class="text-2xl text-green-500 hover:text-green-600 transition">WhatsApp</a>
             </div>
-            <p class="text-gray-600">&copy; 2025 Veritone Services. All rights reserved.</p>
+            <p class="text-gray-600">© 2025 Veritone Services. All rights reserved.</p>
         </div>
     </footer>
 

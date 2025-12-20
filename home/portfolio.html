@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Veritone Services</title>
+    <meta name="description" content="Explore our portfolio of ghostwritten books, speeches, corporate communications, and more.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#111827',
+                        accent: '#D4AF37',
+                        light: '#F9FAFB',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        body { background-color: #FFFFFF; color: #111827; }
+        .masonry-grid {
+            column-count: 3;
+            column-gap: 1.5rem;
+        }
+        @media (max-width: 1024px) {
+            .masonry-grid { column-count: 2; }
+        }
+        @media (max-width: 640px) {
+            .masonry-grid { column-count: 1; }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- Paste Shared Navigation Here (from Step 1) -->
+
+    <!-- Page Header -->
+    <section class="pt-32 pb-20 bg-light text-center">
+        <div class="max-w-5xl mx-auto px-6">
+            <h1 class="text-5xl md:text-6xl font-serif text-primary mb-6">Portfolio</h1>
+            <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                A selection of our finest work: ghostwritten books, speeches, corporate materials, and campaigns that inspire and influence.
+            </p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="py-12 bg-white text-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="inline-flex space-x-6 bg-light rounded-full px-6 py-3">
+                <button class="px-6 py-2 rounded-full bg-primary text-white font-medium">All</button>
+                <button class="px-6 py-2 rounded-full text-primary hover:bg-gray-200 transition">Books</button>
+                <button class="px-6 py-2 rounded-full text-primary hover:bg-gray-200 transition">Speeches</button>
+                <button class="px-6 py-2 rounded-full text-primary hover:bg-gray-200 transition">Corporate</button>
+                <button class="px-6 py-2 rounded-full text-primary hover:bg-gray-200 transition">Social</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Masonry Portfolio Grid -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="masonry-grid">
+                <!-- Item 1: Book Cover -->
+                <div class="mb-8 break-inside-avoid">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-md">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=800" alt="Leadership Book Cover" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <h3 class="text-white text-2xl font-serif mb-2">Leadership in Africa</h3>
+                                <p class="text-gray-200 text-sm">Ghostwritten book cover</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2: Speech Manuscript -->
+                <div class="mb-8 break-inside-avoid">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-md">
+                        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&q=80&w=800" alt="Executive Speech" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <h3 class="text-white text-2xl font-serif mb-2">Keynote Speech</h3>
+                                <p class="text-gray-200 text-sm">Crafted for a Fortune 500 CEO</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3: Corporate Report -->
+                <div class="mb-8 break-inside-avoid">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-md">
+                        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=800" alt="Annual Report" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <h3 class="text-white text-2xl font-serif mb-2">Annual Report Design</h3>
+                                <p class="text-gray-200 text-sm">Corporate communications project</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4: Social Media Campaign -->
+                <div class="mb-8 break-inside-avoid">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-md">
+                        <img src="https://images.unsplash.com/photo-1611162617210-7c7a8f4d0d3b?auto=format&fit=crop&q=80&w=800" alt="Instagram Campaign" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <h3 class="text-white text-2xl font-serif mb-2">Brand Campaign</h3>
+                                <p class="text-gray-200 text-sm">Social media visuals</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add 8-12 more items similarly for a rich grid -->
+                <!-- Example Item 5 -->
+                <div class="mb-8 break-inside-avoid">
+                    <div class="relative group overflow-hidden rounded-2xl shadow-md">
+                        <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&q=80&w=800" alt="Memoir Cover" class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <div>
+                                <h3 class="text-white text-2xl font-serif mb-2">Personal Memoir</h3>
+                                <p class="text-gray-200 text-sm">Ghostwritten and published</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Continue adding items to fill the grid -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-light text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-4xl font-serif text-primary mb-8">Your Project Could Be Next</h2>
+            <p class="text-xl text-gray-700 mb-12">Let's create something extraordinary together.</p>
+            <a href="contact.html" class="bg-primary text-white px-12 py-5 rounded-full text-xl font-medium hover:bg-gray-800 transition">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Shared Footer (from Step 1) -->
+
+</body>
+</html>

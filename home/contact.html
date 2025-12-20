@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Veritone Services</title>
+    <meta name="description" content="Get in touch for a free quote on ghostwriting, editing, publishing, or any communications project.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#111827',
+                        accent: '#D4AF37',
+                        light: '#F9FAFB',
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Formspree JS for form handling -->
+    <script src="https://formspree.io/js/formspree-form.js"></script>
+    <style>
+        body { background-color: #FFFFFF; color: #111827; }
+        input:focus, textarea:focus, select:focus { outline: none; border-color: #D4AF37; box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2); }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- Paste Shared Navigation Here (from Step 1) -->
+
+    <!-- Page Header -->
+    <section class="pt-32 pb-20 bg-light text-center">
+        <div class="max-w-5xl mx-auto px-6">
+            <h1 class="text-5xl md:text-6xl font-serif text-primary mb-6">Get in Touch</h1>
+            <p class="text-xl text-gray-700 max-w-3xl mx-auto">
+                Let's discuss your project. We'll respond within 24 hours with a tailored proposal.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="py-20 bg-white">
+        <div class="max-w-3xl mx-auto px-6">
+            <form action="https://formspree.io/f/YOUR_FORM_ID_HERE" method="POST" class="grid gap-8">
+                <div>
+                    <label for="name" class="block text-lg font-medium text-gray-700 mb-2">Full Name</label>
+                    <input type="text" id="name" name="name" required class="w-full px-6 py-4 border border-gray-300 rounded-xl focus:border-accent transition">
+                </div>
+
+                <div>
+                    <label for="email" class="block text-lg font-medium text-gray-700 mb-2">Email Address</label>
+                    <input type="email" id="email" name="email" required class="w-full px-6 py-4 border border-gray-300 rounded-xl focus:border-accent transition">
+                </div>
+
+                <div>
+                    <label for="phone" class="block text-lg font-medium text-gray-700 mb-2">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required class="w-full px-6 py-4 border border-gray-300 rounded-xl focus:border-accent transition">
+                </div>
+
+                <div>
+                    <label for="service" class="block text-lg font-medium text-gray-700 mb-2">Service Interested In</label>
+                    <select id="service" name="service" required class="w-full px-6 py-4 border border-gray-300 rounded-xl focus:border-accent transition">
+                        <option value="">Select a Service</option>
+                        <option value="ghostwriting">Ghostwriting</option>
+                        <option value="editing">Editing & Proofreading</option>
+                        <option value="academic">Academic Writing & Research</option>
+                        <option value="corporate">Corporate Communications</option>
+                        <option value="publishing">Book Publishing</option>
+                        <option value="social">Social Media Management</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="details" class="block text-lg font-medium text-gray-700 mb-2">Project Details</label>
+                    <textarea id="details" name="details" rows="6" required class="w-full px-6 py-4 border border-gray-300 rounded-xl focus:border-accent transition"></textarea>
+                </div>
+
+                <div>
+                    <label for="budget" class="block text-lg font-medium text-gray-700 mb-2">Estimated Budget Range</label>
+                    <select id="budget" name="budget" class="w-full px-6 py-4 border border-gray-300 rounded-xl focus:border-accent transition">
+                        <option value="">Select Range</option>
+                        <option value="500k-1m">₦500,000 - ₦1M</option>
+                        <option value="1m-5m">₦1M - ₦5M</option>
+                        <option value="5m+">₦5M+</option>
+                        <option value="not-sure">Not sure yet</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="bg-primary text-white px-12 py-5 rounded-full text-xl font-medium hover:bg-gray-800 transition shadow-lg">
+                    Submit Inquiry
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Additional Info / CTA -->
+    <section class="py-16 bg-light text-center">
+        <div class="max-w-4xl mx-auto px-6">
+            <p class="text-lg text-gray-700 mb-8">Prefer a quick chat? Reach us on WhatsApp or Instagram.</p>
+            <div class="flex justify-center gap-8">
+                <a href="https://wa.me/2341234567890" class="text-4xl text-green-500 hover:text-green-600 transition">WhatsApp</a>
+                <a href="https://instagram.com/veritoneng" class="text-4xl text-primary hover:text-accent transition">Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shared Footer (from Step 1) -->
+
+</body>
+</html>

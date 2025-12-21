@@ -60,21 +60,32 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .logo-i {
+   .logo-i {
   position: relative;
   display: inline-block;
+  color: transparent; /* Hides original i and its dot */
+}
+
+.logo-i::before {
+  content: 'i';
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #000000; /* Matches primary text color */
+  z-index: 1;
 }
 
 .logo-i::after {
   content: '';
   position: absolute;
-  top: -2px; /* Adjust if needed for your font size */
+  top: -2px;
   left: 50%;
   transform: translateX(-50%);
-  width: 6px; /* Dot size */
+  width: 6px;
   height: 6px;
-  background-color: #FF0000; /* Pure red - change hex if you want a different shade */
+  background-color: #FF0000; /* Red dot */
   border-radius: 50%;
+  z-index: 2;
 }
     </style>
 </head>

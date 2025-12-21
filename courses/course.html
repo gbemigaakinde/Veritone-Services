@@ -40,11 +40,12 @@
             opacity: 1;
             transform: translateY(0);
         }
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-        .delay-4 { transition-delay: 0.4s; }
-        .delay-5 { transition-delay: 0.5s; }
+        /* Staggered delays */
+        .animate-on-scroll:nth-child(1) { transition-delay: 0s; }
+        .animate-on-scroll:nth-child(2) { transition-delay: 0.1s; }
+        .animate-on-scroll:nth-child(3) { transition-delay: 0.2s; }
+        .animate-on-scroll:nth-child(4) { transition-delay: 0.3s; }
+        .animate-on-scroll:nth-child(5) { transition-delay: 0.4s; }
     </style>
 </head>
 <body class="antialiased">
@@ -96,9 +97,7 @@
             <h2 class="text-4xl font-bold text-primary text-center mb-16">Our Courses</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
                 <!-- Elite Communication Mastery -->
-                <div x-data="{ visible: false }" x-intersect.once="visible = true"
-                     class="bg-light rounded-2xl overflow-hidden shadow-md transition-hover hover:scale-105 animate-on-scroll"
-                     :class="{ 'visible': visible }">
+                <div class="bg-light rounded-2xl overflow-hidden shadow-md transition-hover hover:scale-105 animate-on-scroll">
                     <div class="p-8">
                         <h3 class="text-2xl font-bold mb-4">Elite Communication Mastery Program</h3>
                         <p class="text-lg mb-6">12-week live cohort for busy professionals: Speak with confidence, influence, and executive presence.</p>
@@ -111,9 +110,7 @@
                 </div>
 
                 <!-- Placeholder: Upcoming Course 1 -->
-                <div x-data="{ visible: false }" x-intersect.once="visible = true"
-                     class="bg-light rounded-2xl overflow-hidden shadow-md transition-hover hover:scale-105 animate-on-scroll delay-1"
-                     :class="{ 'visible': visible }">
+                <div class="bg-light rounded-2xl overflow-hidden shadow-md transition-hover hover:scale-105 animate-on-scroll">
                     <div class="p-8">
                         <h3 class="text-2xl font-bold mb-4">Executive Storytelling Mastery</h3>
                         <p class="text-lg mb-6">Coming soon: Craft compelling stories that inspire and persuade.</p>
@@ -126,9 +123,7 @@
                 </div>
 
                 <!-- Placeholder: Upcoming Course 2 -->
-                <div x-data="{ visible: false }" x-intersect.once="visible = true"
-                     class="bg-light rounded-2xl overflow-hidden shadow-md transition-hover hover:scale-105 animate-on-scroll delay-2"
-                     :class="{ 'visible': visible }">
+                <div class="bg-light rounded-2xl overflow-hidden shadow-md transition-hover hover:scale-105 animate-on-scroll">
                     <div class="p-8">
                         <h3 class="text-2xl font-bold mb-4">Advanced Persuasion & Negotiation</h3>
                         <p class="text-lg mb-6">Coming soon: Master ethical influence in business and leadership.</p>
@@ -141,9 +136,7 @@
                 </div>
 
                 <!-- Placeholder: Upcoming Course 3 -->
-                <div x-data="{ visible: false }" x-intersect.once="visible = true"
-                     class="bg-light rounded-2xl overflow-hidden shadow-md transition-hover hover:scale-105 animate-on-scroll delay-3"
-                     :class="{ 'visible': visible }">
+                <div class="bg-light rounded-2xl overflow-hidden shadow-md transition-hover hover:scale-105 animate-on-scroll">
                     <div class="p-8">
                         <h3 class="text-2xl font-bold mb-4">Personal Branding for Leaders</h3>
                         <p class="text-lg mb-6">Coming soon: Build an authentic online presence that attracts opportunities.</p>
@@ -156,9 +149,7 @@
                 </div>
 
                 <!-- Placeholder: Upcoming Course 4 -->
-                <div x-data="{ visible: false }" x-intersect.once="visible = true"
-                     class="bg-light rounded-2xl overflow-hidden shadow-md transition-hover hover:scale-105 animate-on-scroll delay-4"
-                     :class="{ 'visible': visible }">
+                <div class="bg-light rounded-2xl overflow-hidden shadow-md transition-hover hover:scale-105 animate-on-scroll">
                     <div class="p-8">
                         <h3 class="text-2xl font-bold mb-4">Leadership Writing & Thought Leadership</h3>
                         <p class="text-lg mb-6">Coming soon: Develop your voice as a thought leader through written content.</p>
@@ -197,6 +188,24 @@
             <p class="text-gray-500 text-xs">© 2025 Veritone Services. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Scroll Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-on-scroll').forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
 
 </body>
 </html>

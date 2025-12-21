@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veritone Courses – Elevate Your Skills</title>
+    <meta name="description" content="Premium online courses from Veritone Services: Elite Communication Mastery and upcoming programs for professionals.">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000',
+                        accent: '#001F3F',
+                        gray: '#666666',
+                        light: '#F9FAFB',
+                        dark: '#111111',
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        body { background-color: #FFFFFF; color: #666666; font-family: 'Manrope', sans-serif; }
+        h1, h2, h3 { color: #000000; }
+        .transition-hover { transition: all 0.3s ease; }
+        .hover\:scale-105:hover { transform: scale(1.05); }
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Shared Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="../index.html" class="text-3xl font-bold text-primary hover:text-accent transition">
+                Veritone
+            </a>
+            <ul class="hidden md:flex items-center space-x-10 text-base font-medium">
+                <li><a href="../index.html" class="text-primary hover:text-accent transition">Home</a></li>
+                <li><a href="about.html" class="text-primary hover:text-accent transition">About</a></li>
+                <li><a href="services.html" class="text-primary hover:text-accent transition">Services</a></li>
+                <li><a href="portfolio.html" class="text-primary hover:text-accent transition">Portfolio</a></li>
+                <li><a href="courses.html" class="text-accent font-semibold">Courses</a></li>
+                <li><a href="contact.html" class="text-primary hover:text-accent transition">Contact</a></li>
+            </ul>
+            <!-- Mobile Menu -->
+            <div x-data="{ open: false }" class="md:hidden">
+                <button @click="open = !open" class="text-primary">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+                <ul x-show="open" @click.away="open = false" class="absolute top-20 right-4 bg-white border border-gray-200 rounded-xl py-6 px-8 shadow-2xl min-w-64 space-y-4">
+                    <li><a href="../index.html" class="block text-primary hover:text-accent">Home</a></li>
+                    <li><a href="about.html" class="block text-primary hover:text-accent">About</a></li>
+                    <li><a href="services.html" class="block text-primary hover:text-accent">Services</a></li>
+                    <li><a href="portfolio.html" class="block text-primary hover:text-accent">Portfolio</a></li>
+                    <li><a href="courses.html" class="block text-accent font-semibold">Courses</a></li>
+                    <li><a href="contact.html" class="block text-primary hover:text-accent">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 bg-light text-center">
+        <div class="max-w-5xl mx-auto px-6">
+            <h1 class="text-5xl md:text-6xl font-bold text-primary mb-6">Veritone Courses</h1>
+            <p class="text-2xl text-gray max-w-4xl mx-auto">
+                Premium online programs designed to elevate your skills, confidence, and influence.
+            </p>
+        </div>
+    </section>
+
+    <!-- Current & Upcoming Courses with Scroll Animation -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-primary text-center mb-16">Our Courses</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+                <!-- Elite Communication Mastery -->
+                <div x-data="{ visible: false }" x-intersect.once="visible = true"
+                     class="bg-light rounded-2xl overflow-hidden shadow-md transition-hover hover:scale-105 animate-on-scroll"
+                     :class="{ 'visible': visible }">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4">Elite Communication Mastery Program</h3>
+                        <p class="text-lg mb-6">12-week live cohort for busy professionals: Speak with confidence, influence, and executive presence.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-accent text-white px-3 py-1 rounded-full text-sm">Live Cohort</span>
+                            <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">Starts Jan 13, 2026</span>
+                        </div>
+                        <a href="communication-mastery.html" class="text-accent font-medium hover:underline">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- Placeholder: Upcoming Course 1 -->
+                <div x-data="{ visible: false }" x-intersect.once="visible = true"
+                     class="bg-light rounded-2xl overflow-hidden shadow-md transition-hover hover:scale-105 opacity-80 animate-on-scroll"
+                     :class="{ 'visible': visible }">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4">Executive Storytelling Mastery</h3>
+                        <p class="text-lg mb-6">Coming soon: Craft compelling stories that inspire and persuade.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-400 text-white px-3 py-1 rounded-full text-sm">Upcoming</span>
+                            <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">Q2 2026</span>
+                        </div>
+                        <a href="#" class="text-accent font-medium hover:underline">Notify Me When Available</a>
+                    </div>
+                </div>
+
+                <!-- Placeholder: Upcoming Course 2 -->
+                <div x-data="{ visible: false }" x-intersect.once="visible = true"
+                     class="bg-light rounded-2xl overflow-hidden shadow-md transition-hover hover:scale-105 opacity-80 animate-on-scroll"
+                     :class="{ 'visible': visible }">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4">Advanced Persuasion & Negotiation</h3>
+                        <p class="text-lg mb-6">Coming soon: Master ethical influence in business and leadership.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-400 text-white px-3 py-1 rounded-full text-sm">Upcoming</span>
+                            <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">Q3 2026</span>
+                        </div>
+                        <a href="#" class="text-accent font-medium hover:underline">Notify Me When Available</a>
+                    </div>
+                </div>
+
+                <!-- Placeholder: Upcoming Course 3 -->
+                <div x-data="{ visible: false }" x-intersect.once="visible = true"
+                     class="bg-light rounded-2xl overflow-hidden shadow-md transition-hover hover:scale-105 opacity-80 animate-on-scroll"
+                     :class="{ 'visible': visible }">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4">Personal Branding for Leaders</h3>
+                        <p class="text-lg mb-6">Coming soon: Build an authentic online presence that attracts opportunities.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-400 text-white px-3 py-1 rounded-full text-sm">Upcoming</span>
+                            <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">Q4 2026</span>
+                        </div>
+                        <a href="#" class="text-accent font-medium hover:underline">Notify Me When Available</a>
+                    </div>
+                </div>
+
+                <!-- Placeholder: Upcoming Course 4 -->
+                <div x-data="{ visible: false }" x-intersect.once="visible = true"
+                     class="bg-light rounded-2xl overflow-hidden shadow-md transition-hover hover:scale-105 opacity-80 animate-on-scroll"
+                     :class="{ 'visible': visible }">
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4">Leadership Writing & Thought Leadership</h3>
+                        <p class="text-lg mb-6">Coming soon: Develop your voice as a thought leader through written content.</p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-gray-400 text-white px-3 py-1 rounded-full text-sm">Upcoming</span>
+                            <span class="bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm">Q1 2027</span>
+                        </div>
+                        <a href="#" class="text-accent font-medium hover:underline">Notify Me When Available</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 bg-accent text-white text-center">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-6">Ready to Elevate Your Skills?</h2>
+            <p class="text-xl mb-12">Join our premium courses and unlock your potential.</p>
+            <a href="../contact.html" class="bg-white text-accent px-10 py-5 rounded-full font-bold hover:bg-gray-100 transition">Get Notified for Upcoming Courses</a>
+        </div>
+    </section>
+
+    <!-- Shared Footer -->
+    <footer class="bg-white border-t border-gray-200 py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center space-y-4">
+            <p class="text-gray text-sm">info@veritoneservices.com • +234 123 456 7890</p>
+            <div class="flex justify-center gap-6">
+                <a href="https://instagram.com/veritoneng" target="_blank">
+                    <img src="../images/instagram.svg" alt="Instagram" width="24" height="24">
+                </a>
+                <a href="https://wa.me/2341234567890" target="_blank">
+                    <img src="../images/whatsapp.svg" alt="WhatsApp" width="24" height="24">
+                </a>
+            </div>
+            <p class="text-gray-500 text-xs">© 2025 Veritone Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

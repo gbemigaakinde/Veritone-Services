@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editing & Proofreading Services | Veritone Services</title>
+    <meta name="description" content="Professional editing and proofreading services for manuscripts, ensuring polished, error-free content ready for publication or presentation.">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#000000',
+                        accent: '#001F3F',
+                        gray: '#666666',
+                        light: '#F9FAFB',
+                        dark: '#111111',
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        body { background-color: #FFFFFF; color: #666666; font-family: 'Manrope', sans-serif; }
+        h1, h2, h3 { color: #000000; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Shared Navigation (for pages in home/services/) -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <a href="../index.html" class="text-3xl font-bold text-primary hover:text-accent transition">
+                Veritone
+            </a>
+            <ul class="hidden md:flex items-center space-x-10 text-base font-medium">
+                <li><a href="../index.html" class="text-primary hover:text-accent transition">Home</a></li>
+                <li><a href="about.html" class="text-primary hover:text-accent transition">About</a></li>
+                <li><a href="../services.html" class="text-primary hover:text-accent transition">Services</a></li>
+                <li><a href="../portfolio.html" class="text-primary hover:text-accent transition">Portfolio</a></li>
+                <li><a href="contact.html" class="text-primary hover:text-accent transition">Contact</a></li>
+                <li>
+                    <a href="https://gbemigaakinde.github.io/Communication-Course/" target="_blank" class="bg-accent text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition shadow-md">
+                        Enroll in Course
+                    </a>
+                </li>
+            </ul>
+            <!-- Mobile Menu -->
+            <div x-data="{ open: false }" class="md:hidden">
+                <button @click="open = !open" class="text-primary">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+                <ul x-show="open" @click.away="open = false" class="absolute top-20 right-4 bg-white border border-gray-200 rounded-xl py-6 px-8 shadow-2xl min-w-64 space-y-4">
+                    <li><a href="../index.html" class="block text-primary hover:text-accent">Home</a></li>
+                    <li><a href="about.html" class="block text-primary hover:text-accent">About</a></li>
+                    <li><a href="../services.html" class="block text-primary hover:text-accent">Services</a></li>
+                    <li><a href="../portfolio.html" class="block text-primary hover:text-accent">Portfolio</a></li>
+                    <li><a href="contact.html" class="block text-primary hover:text-accent">Contact</a></li>
+                    <li>
+                        <a href="https://gbemigaakinde.github.io/Communication-Course/" target="_blank" class="block bg-accent text-white text-center py-3 rounded-full hover:bg-blue-700">
+                            Enroll in Course
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero for Service -->
+    <section class="pt-32 pb-20 bg-light text-center">
+        <div class="max-w-5xl mx-auto px-6">
+            <h1 class="text-5xl md:text-6xl font-bold text-primary mb-6">Editing & Proofreading Services</h1>
+            <p class="text-2xl text-gray max-w-4xl mx-auto">
+                We refine your content to perfection – polished, error-free, and ready for impact.
+            </p>
+        </div>
+    </section>
+
+    <!-- What It Is -->
+    <section class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-primary mb-8">What are Editing & Proofreading?</h2>
+            <p class="text-lg leading-relaxed mb-6">
+                Editing involves improving the overall structure, clarity, flow, and style of your manuscript, ensuring it communicates your message effectively and engagingly. Proofreading is the final polish, focusing on grammar, spelling, punctuation, consistency, and formatting errors.
+            </p>
+            <p class="text-lg leading-relaxed">
+                Together, they transform drafts into professional, publishable works—ideal for authors, executives, academics, and brands preparing content for publication, presentations, or distribution.
+            </p>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="py-24 bg-light">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+            <div class="p-8 bg-white rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold mb-4">Enhanced Clarity & Impact</h3>
+                <p class="text-lg">We refine your message to make it clearer, more compelling, and reader-friendly.</p>
+            </div>
+            <div class="p-8 bg-white rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold mb-4">Error-Free Excellence</h3>
+                <p class="text-lg">We eliminate all grammatical, spelling, and formatting issues for a flawless final product.</p>
+            </div>
+            <div class="p-8 bg-white rounded-lg shadow-md">
+                <h3 class="text-2xl font-bold mb-4">Time & Stress Savings</h3>
+                <p class="text-lg">Let us handle the tedious polishing so you can focus on your core strengths.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Process -->
+    <section class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-primary text-center mb-16">Our Detailed Editing & Proofreading Process</h2>
+            <div class="space-y-16">
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <div class="bg-accent text-white w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold shrink-0">
+                        1
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-bold mb-4">Initial Consultation & Manuscript Submission</h3>
+                        <p class="text-lg leading-relaxed">
+                            We start with a detailed discussion of your goals, audience, style preferences, and any specific concerns (e.g., tone, length, or focus areas). You submit your manuscript (Word, Google Docs, or PDF), along with any guidelines or references.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <div class="bg-accent text-white w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold shrink-0">
+                        2
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-bold mb-4">Comprehensive Structural Editing</h3>
+                        <p class="text-lg leading-relaxed">
+                            We review the big-picture elements: structure, flow, organization, pacing, and consistency. We suggest major improvements like reordering sections, strengthening arguments, enhancing transitions, or refining voice to make the content more engaging and impactful.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <div class="bg-accent text-white w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold shrink-0">
+                        3
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-bold mb-4">Line Editing & Style Refinement</h3>
+                        <p class="text-lg leading-relaxed">
+                            We dive into sentence-level improvements: clarity, conciseness, word choice, rhythm, and style. We ensure the language is precise, engaging, and aligned with your voice, while eliminating redundancies and awkward phrasing.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <div class="bg-accent text-white w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold shrink-0">
+                        4
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-bold mb-4">Copyediting & Proofreading</h3>
+                        <p class="text-lg leading-relaxed">
+                            We conduct thorough copyediting for grammar, spelling, punctuation, consistency (e.g., tense, formatting, citations), and adherence to style guides (e.g., Chicago, APA). Final proofreading catches any remaining errors for a flawless manuscript.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-8 items-start">
+                    <div class="bg-accent text-white w-20 h-20 rounded-full flex items-center justify-center text-2xl font-bold shrink-0">
+                        5
+                    </div>
+                    <div>
+                        <h3 class="text-3xl font-bold mb-4">Final Review & Delivery</h3>
+                        <p class="text-lg leading-relaxed">
+                            We provide tracked changes for your review, incorporate your final feedback, and deliver the polished manuscript in your preferred format. We offer optional extras like formatting for print/ebook or cover suggestions.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-accent text-white text-center">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-4xl font-bold mb-6">Ready to Polish Your Content?</h2>
+            <p class="text-xl mb-12">Let's make your work shine.</p>
+            <a href="../contact.html" class="bg-white text-accent px-10 py-5 rounded-full font-bold hover:bg-gray-100 transition">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <!-- Shared Footer -->
+    <footer class="bg-white border-t border-gray-200 py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center space-y-4">
+            <p class="text-gray text-sm">info@veritoneservices.com • +234 123 456 7890</p>
+            <div class="flex justify-center gap-6">
+                <a href="https://instagram.com/veritoneng" target="_blank">
+                    <img src="../images/instagram.svg" alt="Instagram" width="24" height="24">
+                </a>
+                <a href="https://wa.me/2341234567890" target="_blank">
+                    <img src="../images/whatsapp.svg" alt="WhatsApp" width="24" height="24">
+                </a>
+            </div>
+            <p class="text-gray-500 text-xs">© 2025 Veritone Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

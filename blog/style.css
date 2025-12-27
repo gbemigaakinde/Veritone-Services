@@ -1,0 +1,354 @@
+:root {
+    /* Colors */
+    --bg-color: #fcfcfc;
+    --sidebar-bg: #f4f4f4;
+    --text-primary: #2c2c2c;
+    --text-secondary: #555555;
+    --accent-color: #333333;
+    --border-color: #e0e0e0;
+    --hover-color: #000000;
+    
+    /* Typography */
+    --font-serif: 'Playfair Display', serif;
+    --font-sans: 'Inter', sans-serif;
+    
+    /* Spacing */
+    --sidebar-width: 280px;
+    --container-width: 740px;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    
+    /* Transitions */
+    --transition-speed: 0.3s;
+}
+
+/* Reset & Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--hover-color);
+}
+
+/* Layout */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    padding: var(--spacing-lg) var(--spacing-md);
+    z-index: 100;
+    transition: transform var(--transition-speed) ease;
+}
+
+#main-content {
+    margin-left: var(--sidebar-width);
+    padding: var(--spacing-lg) var(--spacing-md);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+}
+
+/* Sidebar Components */
+.brand {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-lg);
+    letter-spacing: -0.02em;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    margin-bottom: 1rem;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    display: block;
+    padding: 0.5rem 0;
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: var(--spacing-md);
+    font-size: 0.75rem;
+    color: #999;
+}
+
+/* Mobile Toggle */
+#sidebar-toggle {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 200;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-primary);
+    background-color: rgba(255,255,255,0.8);
+    padding: 5px;
+    border-radius: 4px;
+}
+
+/* Homepage Styles */
+.hero {
+    margin-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: var(--spacing-md);
+}
+
+.hero h1 {
+    font-family: var(--font-serif);
+    font-size: 3rem;
+    font-weight: 400;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    font-weight: 300;
+}
+
+.posts-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.post-preview {
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid transparent;
+    transition: transform 0.2s ease;
+}
+
+.post-preview:hover {
+    /* Subtle hover effect */
+    transform: translateX(5px);
+}
+
+.post-meta {
+    font-size: 0.85rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.post-preview h2 {
+    font-family: var(--font-serif);
+    font-size: 1.75rem;
+    font-weight: 400;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+
+.post-preview h2 a {
+    color: var(--text-primary);
+}
+
+.post-excerpt {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.read-more {
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: underline;
+    text-decoration-color: var(--border-color);
+    text-underline-offset: 4px;
+}
+
+.read-more:hover {
+    text-decoration-color: var(--text-primary);
+}
+
+/* Post Page Styles */
+.post-container {
+    max-width: 680px; /* Slightly narrower for optimal reading */
+}
+
+.post-header {
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.post-title {
+    font-family: var(--font-serif);
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.post-info {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-family: var(--font-sans);
+}
+
+.separator {
+    margin: 0 0.5rem;
+    color: var(--border-color);
+}
+
+.post-body {
+    font-family: var(--font-serif); /* Serif for body text usually reads better for long form */
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #333;
+}
+
+.post-body p {
+    margin-bottom: 1.5rem;
+}
+
+.post-body h2 {
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.post-body blockquote {
+    border-left: 3px solid var(--accent-color);
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+}
+
+.back-link {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--border-color);
+}
+
+.loading {
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* Progress Bar */
+#reading-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: var(--text-primary);
+    z-index: 1000;
+    transition: width 0.1s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #sidebar {
+        transform: translateX(-100%);
+        box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+    }
+
+    #sidebar.active {
+        transform: translateX(0);
+    }
+
+    #main-content {
+        margin-left: 0;
+        padding: 4rem 1.5rem;
+    }
+
+    #sidebar-toggle {
+        display: block;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .post-title {
+        font-size: 2rem;
+    }
+}
+/* Enhanced blockquotes (suggestion 3) */
+.post-body blockquote {
+    background: rgba(0,0,0,0.02);
+    padding: 1.8rem 2.2rem;
+    border-left: 4px solid var(--accent-color);
+    font-size: 1.25rem;
+    line-height: 1.7;
+    margin: 2.5rem 0;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Subtle sidebar shadow for depth (suggestion 7) */
+#sidebar {
+    box-shadow: 2px 0 10px rgba(0,0,0,0.05);
+}
+
+/* Better mobile hero spacing (suggestion 4) */
+@media (max-width: 768px) {
+    .hero {
+        margin-bottom: var(--spacing-md);
+        padding-bottom: var(--spacing-md);
+    }
+    
+    .hero h1 {
+        font-size: 2.6rem;
+    }
+}
+
+/* Active category highlighting on post page (suggestion 5) */
+/* Already handled in JS, but ensure style exists */
+.nav-links a.active {
+    color: var(--text-primary);
+    font-weight: 500;
+}

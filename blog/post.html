@@ -1,0 +1,67 @@
+<!-- post.html (FULL UPDATED CODE - REPLACE YOUR ENTIRE post.html WITH THIS) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post | The Minimalist</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Progress Bar -->
+    <div id="reading-progress"></div>
+
+    <!-- Mobile Menu Toggle -->
+    <button id="sidebar-toggle" aria-label="Toggle Navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar">
+        <div class="sidebar-content">
+            <div class="brand">
+                <a href="index.html">The Minimalist</a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">All Posts</a></li>
+                    <li><a href="index.html">Politics & Governance</a></li>
+                    <li><a href="index.html">Writing & Communication</a></li>
+                    <li><a href="index.html">Family & Relationships</a></li>
+                    <li><a href="index.html">Design & Technology</a></li>
+                    <li><a href="#" onclick="alert('About page placeholder')">About</a></li>
+                    <li><a href="#" onclick="alert('Contact placeholder')">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>&copy; 2025</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main id="main-content">
+        <div class="container post-container">
+            <!-- Dynamic Post Content -->
+            <article id="blog-post-content" class="fade-in">
+                <div class="loading">Loading article...</div>
+            </article>
+
+            <div class="back-link">
+                <a href="index.html">&larr; Back to Home</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

@@ -354,12 +354,13 @@ a:hover {
 }
 /* style.css (ADD THESE NEW RULES AT THE END OF YOUR FILE) */
 
-/* Beautiful minimalist footer */
+/* Beautiful minimalist footer - UPDATED FOR LEFT ALIGNMENT */
 .site-footer {
     background-color: var(--sidebar-bg);
     border-top: 1px solid var(--border-color);
     margin-top: var(--spacing-lg);
     padding-top: var(--spacing-lg);
+    width: 100%; /* Ensures full-width background */
 }
 
 .footer-container {
@@ -367,6 +368,15 @@ a:hover {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: var(--spacing-lg);
     padding-bottom: var(--spacing-md);
+    max-width: var(--container-width);
+    margin: 0 auto; /* Centers the grid container but keeps internal left alignment */
+    text-align: left; /* Left-align all text */
+}
+
+.footer-brand,
+.footer-links,
+.footer-social {
+    text-align: left;
 }
 
 .footer-brand {
@@ -425,6 +435,7 @@ a:hover {
 .social-icons {
     display: flex;
     gap: 1.5rem;
+    justify-content: flex-start; /* Align social icons to the left */
 }
 
 .social-icons a {
@@ -440,20 +451,30 @@ a:hover {
 .footer-bottom {
     border-top: 1px solid var(--border-color);
     padding: var(--spacing-md) 0;
-    text-align: center;
+    text-align: left; /* Changed from center to left */
     font-size: 0.85rem;
     color: var(--text-secondary);
+    max-width: var(--container-width);
+    margin: 0 auto; /* Matches the main container alignment */
 }
 
-/* Mobile adjustments */
+/* Mobile adjustments - now left-aligned instead of centered */
 @media (max-width: 768px) {
     .footer-container {
         grid-template-columns: 1fr;
-        text-align: center;
+        text-align: left;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
     
     .social-icons {
-        justify-content: center;
+        justify-content: flex-start; /* Left on mobile too */
+    }
+    
+    .footer-bottom {
+        text-align: left;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
 }
 /* style.css (ADD THESE NEW RULES AT THE END OF YOUR FILE) */

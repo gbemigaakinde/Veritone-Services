@@ -291,3 +291,24 @@ function initReadingProgress() {
         progressBar.style.width = scrollPercent + '%';
     });
 }
+// script.js (ADD THIS NEW FUNCTION AT THE END OF YOUR FILE, BEFORE THE closing } of DOMContentLoaded if needed)
+
+// Simple contact form handling (client-side only - shows success message)
+if (document.getElementById('contact-form')) {
+    const contactForm = document.getElementById('contact-form');
+    const formMessage = document.getElementById('form-message');
+
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault(); // Prevent actual submit for now
+
+        // Basic validation (already required in HTML)
+        formMessage.textContent = 'Thank you! Your message has been sent. We will get back to you soon.';
+        formMessage.className = 'form-message success';
+
+        // Reset form
+        contactForm.reset();
+
+        // In a real site, you would send this to an email service like Formspree, EmailJS, etc.
+        // Example with Formspree: set action="https://formspree.io/f/your-id"
+    });
+}

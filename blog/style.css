@@ -352,3 +352,173 @@ a:hover {
     color: var(--text-primary);
     font-weight: 500;
 }
+/* style.css (ADD THESE NEW RULES AT THE END OF YOUR FILE) */
+
+/* Beautiful minimalist footer */
+.site-footer {
+    background-color: var(--sidebar-bg);
+    border-top: 1px solid var(--border-color);
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+}
+
+.footer-brand {
+    font-family: var(--font-serif);
+}
+
+.footer-brand a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.footer-tagline {
+    margin-top: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.footer-links h4 {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.footer-links a:hover {
+    color: var(--text-primary);
+}
+
+.footer-social h4 {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-icons a {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.social-icons a:hover {
+    color: var(--text-primary);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border-color);
+    padding: var(--spacing-md) 0;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+}
+/* style.css (ADD THESE NEW RULES AT THE END OF YOUR FILE) */
+
+/* Contact form styles */
+.contact-body form {
+    margin-top: var(--spacing-lg);
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    background-color: var(--bg-color);
+    transition: border-color var(--transition-speed) ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.submit-button {
+    background-color: var(--text-primary);
+    color: white;
+    padding: 0.9rem 1.8rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.submit-button:hover {
+    background-color: var(--hover-color);
+}
+
+.form-message {
+    margin-top: 1rem;
+    font-weight: 500;
+}
+
+.form-message.success {
+    color: #2d6a4f;
+}
+
+.form-message.error {
+    color: #9b2226;
+}

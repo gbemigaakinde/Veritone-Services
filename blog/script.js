@@ -115,47 +115,51 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-/**
- * Sidebar Toggle Functionality
- */
+// UPDATE initSidebar() FUNCTION IN script.js (replace the old one)
+
 function initSidebar() {
-    const toggle = document.getElementById('sidebar-toggle');
+    const toggle = document.querySelector('.mobile-toggle');
     const sidebar = document.getElementById('sidebar');
     const mainContent = document.getElementById('main-content');
-    
-    mainContent.addEventListener('click', () => {
-        if (window.innerWidth <= 768 && sidebar.classList.contains('active')) {
-            sidebar.classList.remove('active');
-        }
-    });
+
+    if (!toggle || !sidebar) return;
 
     toggle.addEventListener('click', (e) => {
         e.stopPropagation();
-        sidebar.classList.toggle('active');
+        sidebar.classList.toggle('open');
+        document.body.classList.toggle('sidebar-open');
     });
 
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-            sidebar.classList.remove('active');
+    // Close when clicking main content on mobile
+    mainContent.addEventListener('click', () => {
+        if (window.innerWidth <= 768 && sidebar.classList.contains('open')) {
+            sidebar.classList.remove('open');
+            document.body.classList.remove('sidebar-open');
         }
     });
 
-    // Category filtering on homepage
+    // Close on resize to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            sidebar.classList.remove('open');
+            document.body.classList.remove('sidebar-open');
+        }
+    });
+
+    // Category filtering (unchanged)
     document.querySelectorAll('.nav-links a[data-filter]').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const filter = link.getAttribute('data-filter');
             
-            // Update active state
             document.querySelectorAll('.nav-links a[data-filter]').forEach(l => l.classList.remove('active'));
             link.classList.add('active');
             
-            // Filter posts
             filterPosts(filter);
             
-            // Close mobile sidebar
             if (window.innerWidth <= 768) {
-                sidebar.classList.remove('active');
+                sidebar.classList.remove('open');
+                document.body.classList.remove('sidebar-open');
             }
         });
     });

@@ -1,0 +1,148 @@
+<!-- contact.html (CREATE A NEW FILE CALLED contact.html AND PASTE THIS FULL CODE) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | The Minimalist</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Progress Bar -->
+    <div id="reading-progress"></div>
+
+    <!-- Mobile Menu Toggle -->
+    <button id="sidebar-toggle" aria-label="Toggle Navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+
+    <!-- Sidebar Navigation -->
+    <aside id="sidebar">
+        <div class="sidebar-content">
+            <div class="brand">
+                <a href="index.html">The Minimalist</a>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">All Posts</a></li>
+                    <li><a href="index.html">Politics & Governance</a></li>
+                    <li><a href="index.html">Writing & Communication</a></li>
+                    <li><a href="index.html">Family & Relationships</a></li>
+                    <li><a href="index.html">Design & Technology</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <p>&copy; 2025</p>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main id="main-content">
+        <div class="container post-container">
+            <article class="post-article">
+                <header class="post-header">
+                    <h1 class="post-title">Get in Touch</h1>
+                </header>
+
+                <div class="post-body contact-body">
+                    <p>We’d love to hear from you. Whether you have feedback, a question, or are interested in contributing, please use the form below.</p>
+
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" disabled selected>Select a topic</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="feedback">Feedback</option>
+                                <option value="contribution">Writing Contribution</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="8" required placeholder="Your message..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-button">Send Message</button>
+
+                        <p id="form-message" class="form-message"></p>
+                    </form>
+                </div>
+            </article>
+
+            <div class="back-link">
+                <a href="index.html">&larr; Back to Home</a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="container footer-container">
+                <div class="footer-brand">
+                    <a href="index.html">The Minimalist</a>
+                    <p class="footer-tagline">Thoughts on design, code, and living intentionally.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">All Posts</a></li>
+                        <li><a href="index.html">Politics & Governance</a></li>
+                        <li><a href="index.html">Writing & Communication</a></li>
+                        <li><a href="index.html">Family & Relationships</a></li>
+                        <li><a href="index.html">Design & Technology</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-social">
+                    <h4>Follow</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Twitter">Twitter</a>
+                        <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                        <a href="#" aria-label="Instagram">Instagram</a>
+                        <a href="#" aria-label="RSS">RSS</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 The Minimalist. All rights reserved.</p>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>

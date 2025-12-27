@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // UPDATE initSidebar() FUNCTION IN script.js (replace the old one)
 
 function initSidebar() {
-    const toggle = document.querySelector('.mobile-toggle');
+    const toggle = document.getElementById('sidebar-toggle'); // Fixed: use ID again
     const sidebar = document.getElementById('sidebar');
     const mainContent = document.getElementById('main-content');
 
@@ -146,7 +146,7 @@ function initSidebar() {
         }
     });
 
-    // Category filtering (unchanged)
+    // Category filtering (keep this unchanged)
     document.querySelectorAll('.nav-links a[data-filter]').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -164,7 +164,6 @@ function initSidebar() {
         });
     });
 }
-
 /**
  * Filter and render posts on homepage
  */

@@ -619,6 +619,7 @@ body, #sidebar, a, .post-preview, .post-body blockquote, #reading-progress,
     color: var(--text-secondary);
     font-weight: 500;
     user-select: none;
+    cursor: default; /* Not clickable */
 }
 
 .theme-toggle {

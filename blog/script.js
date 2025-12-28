@@ -312,12 +312,11 @@ if (document.getElementById('contact-form')) {
         // Example with Formspree: set action="https://formspree.io/f/your-id"
     });
 }
-// Dark/Light Mode Toggle - FIXED VERSION
+// Dark/Light Mode Toggle - FINAL PERFECT VERSION
 document.addEventListener('DOMContentLoaded', () => {
     const themeSwitch = document.getElementById('theme-switch');
     if (!themeSwitch) return;
 
-    // Function to apply theme
     const applyTheme = (theme) => {
         if (theme === 'dark') {
             document.documentElement.classList.add('dark');
@@ -328,31 +327,33 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // On load: Check saved preference → system preference → default to light
+    // Check if user has made a manual choice before
     const savedTheme = localStorage.getItem('theme');
+
     if (savedTheme) {
+        // User has manually chosen → override system
         applyTheme(savedTheme);
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        applyTheme('dark');
     } else {
-        applyTheme('light'); // Explicit default: light mode
+        // No manual choice → follow system preference
+        const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        applyTheme(systemPrefersDark ? 'dark' : 'light');
     }
 
-    // Listen for toggle changes
+    // Manual toggle: overrides system and saves choice
     themeSwitch.addEventListener('change', () => {
         if (themeSwitch.checked) {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('theme', 'dark');
+            applyTheme('dark');
+            localStorage.setItem('theme', 'dark');
         } else {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('theme', 'light');
+            applyTheme('light');
+            localStorage.setItem('theme', 'light');
         }
     });
 
-    // Optional: Listen to system theme changes in real-time
+    // Live system preference updates — ONLY if no manual choice was made
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        if (!localStorage.getItem('theme')) { // Only if user hasn't chosen manually
-        applyTheme(e.matches ? 'dark' : 'light');
+        if (!localStorage.getItem('theme')) {  // Only react if user hasn't overridden
+            applyTheme(e.matches ? 'dark' : 'light');
         }
     });
 });

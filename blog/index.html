@@ -20,43 +20,46 @@
     </head>
     <body>
         <!-- Mobile Menu Toggle -->
-<button id="sidebar-toggle" aria-label="Toggle Navigation" class="mobile-toggle">
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-    <span class="hamburger-line"></span>
-</button>
+        <button id="sidebar-toggle" aria-label="Toggle Navigation">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
 
-<!-- Updated Sidebar Navigation -->
-<aside id="sidebar">
-    <div class="sidebar-content">
-        <div class="brand">
-            <a href="index.html" class="text-xl font-bold text-primary hover:text-accent transition">
-                The Minimalist
-            </a>
-            <p class="mt-2 text-sm text-gray-600">A Veritone Services Blog</p>
-        </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active" data-filter="all">All Posts</a></li>
-                <li><a href="index.html" data-filter="politics">Politics & Governance</a></li>
-                <li><a href="index.html" data-filter="writing">Writing & Communication</a></li>
-                <li><a href="index.html" data-filter="family">Family & Relationships</a></li>
-                <li><a href="index.html" data-filter="design">Design & Technology</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li class="mt-6 pt-6 border-t border-gray-200">
-                    <a href="../index.html" class="text-accent font-medium hover:underline">
-                        Main Page
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <div class="sidebar-footer">
-            <p>&copy; 2026
-            </p>
-        </div>
-    </div>
-</aside>
+        <!-- Sidebar Navigation -->
+        <aside id="sidebar">
+            <div class="sidebar-content">
+                <div class="brand">
+                    <a href="index.html">The Minimalist</a>
+                </div>
+                <nav>
+    <ul class="nav-links">
+        <li><a href="index.html" class="active" data-filter="all">All Posts</a></li>
+        <li><a href="index.html" data-filter="politics">Politics & Governance</a></li>
+        <li><a href="index.html" data-filter="writing">Writing & Communication</a></li>
+        <li><a href="index.html" data-filter="family">Family & Relationships</a></li>
+        <li><a href="index.html" data-filter="design">Design & Technology</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+                <div class="sidebar-footer">
+                    <p>&copy; 2026</p>
+                </div>
+            </div>
+        </aside>
 
         <!-- Main Content Area -->
         <main id="main-content">

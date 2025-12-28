@@ -312,10 +312,11 @@ if (document.getElementById('contact-form')) {
         // Example with Formspree: set action="https://formspree.io/f/your-id"
     });
 }
-// Dark/Light Mode Toggle - FINAL ROBUST VERSION (fixes toggle not working)
+// Dark/Light Mode Toggle - FINAL VERSION (Switch-only click)
 document.addEventListener('DOMContentLoaded', () => {
     const themeSwitch = document.getElementById('theme-switch');
-    if (!themeSwitch) return;
+    const toggleWrapper = document.querySelector('.theme-toggle-wrapper');
+    if (!themeSwitch || !toggleWrapper) return;
 
     const applyTheme = (theme) => {
         if (theme === 'dark') {
@@ -327,7 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Load saved manual preference or follow system
+    // Load saved preference or follow system
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         applyTheme(savedTheme);
@@ -336,9 +337,11 @@ document.addEventListener('DOMContentLoaded', () => {
         applyTheme(systemPrefersDark ? 'dark' : 'light');
     }
 
-    // Manual toggle — now with event.stopPropagation to prevent sidebar close
-    themeSwitch.addEventListener('change', (e) => {
-        // e.stopPropagation();  // Optional: uncomment if needed
+    // Toggle when clicking the switch (or anywhere in wrapper if preferred)
+    toggleWrapper.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent sidebar close on mobile
+
+        themeSwitch.checked = !themeSwitch.checked;
         if (themeSwitch.checked) {
             applyTheme('dark');
             localStorage.setItem('theme', 'dark');
@@ -348,13 +351,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Also prevent the label click from bubbling (important for mobile)
-    const toggleWrapper = document.querySelector('.theme-toggle-wrapper');
-    if (toggleWrapper) {
-        toggleWrapper.addEventListener('click', (e) => {
-            e.stopPropagation();  // This stops the click from reaching main-content listener
-        });
-    }
+    // Optional: Keep keyboard support
+    themeSwitch.addEventListener('change', () => {
+        if (themeSwitch.checked) {
+            applyTheme('dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            applyTheme('light');
+            localStorage.setItem('theme', 'light');
+        }
+    });
 
     // Live system updates only if no manual override
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {

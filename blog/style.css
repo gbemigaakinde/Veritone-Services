@@ -543,29 +543,65 @@ a:hover {
 .form-message.error {
     color: #9b2226;
 }
-/* Dark Mode Overrides */
+/* Dark Mode Overrides - FINAL FIXED VERSION */
 html.dark {
-    --bg-color: #121212;
-    --sidebar-bg: #1e1e1e;
-    --text-primary: #e0e0e0;
+    --bg-color: #0f0f0f;          /* Deep dark background */
+    --sidebar-bg: #1a1a1a;
+    --text-primary: #ffffff;      /* Pure white main text */
     --text-secondary: #bbbbbb;
     --accent-color: #ffffff;
     --border-color: #333333;
     --hover-color: #ffffff;
 }
 
-/* Smooth transitions for theme change */
-body, #sidebar, a, .post-preview, .post-body blockquote, #reading-progress {
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+/* Ensure all post content text is pure white in dark mode */
+html.dark .post-body,
+html.dark .post-body p,
+html.dark .post-body h1,
+html.dark .post-body h2,
+html.dark .post-body h3,
+html.dark .post-body blockquote,
+html.dark .post-info,
+html.dark .post-meta,
+html.dark .post-excerpt,
+html.dark .read-more,
+html.dark .back-link a,
+html.dark .loading {
+    color: #ffffff !important;
 }
 
-/* Theme Toggle Styles */
+/* Subtle blockquote enhancement in dark mode */
+html.dark .post-body blockquote {
+    background: rgba(255, 255, 255, 0.05);
+    border-left-color: #666666;
+}
+
+/* Reading progress bar - bright in dark mode */
+html.dark #reading-progress {
+    background-color: #ffffff;
+}
+
+/* Mobile toggle button in dark mode */
+html.dark .mobile-toggle,
+html.dark #sidebar-toggle {
+    background: rgba(30, 30, 30, 0.95);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+
+/* Smooth transitions for theme changes */
+body, #sidebar, a, .post-preview, .post-body blockquote, #reading-progress,
+.mobile-toggle, .hamburger-line, .theme-toggle-wrapper {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+/* Theme Toggle Styles - ENHANCED FOR VISIBILITY */
 .theme-toggle-wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 1.5rem 0;
-    padding: 0.8rem 0;
+    margin: 1.8rem 0;
+    padding: 1rem 0;
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
 }
@@ -574,13 +610,14 @@ body, #sidebar, a, .post-preview, .post-body blockquote, #reading-progress {
     font-size: 0.9rem;
     color: var(--text-secondary);
     font-weight: 500;
+    user-select: none;
 }
 
 .theme-toggle {
     position: relative;
     display: inline-block;
-    width: 52px;
-    height: 28px;
+    width: 56px;
+    height: 30px;
 }
 
 .theme-toggle input {
@@ -596,32 +633,49 @@ body, #sidebar, a, .post-preview, .post-body blockquote, #reading-progress {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
-    transition: 0.3s;
-    border-radius: 28px;
+    background-color: #999;           /* Neutral off state */
+    transition: 0.4s;
+    border-radius: 30px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
 }
 
 .slider:before {
     position: absolute;
     content: "";
-    height: 22px;
-    width: 22px;
-    left: 3px;
+    height: 24px;
+    width: 24px;
+    left: 4px;
     bottom: 3px;
     background-color: white;
-    transition: 0.3s;
+    transition: 0.4s;
     border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
+/* When toggle is ON (checked) - Bright blue for obvious feedback */
 input:checked + .slider {
-    background-color: #666; /* Subtle dark-mode-on color */
+    background-color: #4a9eff;         /* Vibrant blue when dark mode is ON */
 }
 
 input:checked + .slider:before {
-    transform: translateX(24px);
+    transform: translateX(26px);
 }
 
-/* Optional: Mobile adjustments */
+/* Focus style for accessibility */
+.theme-toggle input:focus + .slider {
+    box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.3);
+}
+
+/* Even better contrast in dark mode */
+html.dark input:checked + .slider {
+    background-color: #4a9eff;
+}
+
+html.dark .slider {
+    background-color: #444;
+}
+
+/* Mobile adjustments */
 @media (max-width: 768px) {
     .theme-toggle-wrapper {
         padding-left: 1rem;

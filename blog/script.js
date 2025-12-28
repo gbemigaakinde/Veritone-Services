@@ -312,7 +312,7 @@ if (document.getElementById('contact-form')) {
         // Example with Formspree: set action="https://formspree.io/f/your-id"
     });
 }
-// Dark/Light Mode Toggle - FINAL PERFECT VERSION
+// Dark/Light Mode Toggle - FINAL ROBUST VERSION (fixes toggle not working)
 document.addEventListener('DOMContentLoaded', () => {
     const themeSwitch = document.getElementById('theme-switch');
     if (!themeSwitch) return;
@@ -327,20 +327,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Check if user has made a manual choice before
+    // Load saved manual preference or follow system
     const savedTheme = localStorage.getItem('theme');
-
     if (savedTheme) {
-        // User has manually chosen → override system
         applyTheme(savedTheme);
     } else {
-        // No manual choice → follow system preference
         const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         applyTheme(systemPrefersDark ? 'dark' : 'light');
     }
 
-    // Manual toggle: overrides system and saves choice
-    themeSwitch.addEventListener('change', () => {
+    // Manual toggle — now with event.stopPropagation to prevent sidebar close
+    themeSwitch.addEventListener('change', (e) => {
+        // e.stopPropagation();  // Optional: uncomment if needed
         if (themeSwitch.checked) {
             applyTheme('dark');
             localStorage.setItem('theme', 'dark');
@@ -350,9 +348,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Live system preference updates — ONLY if no manual choice was made
+    // Also prevent the label click from bubbling (important for mobile)
+    const toggleWrapper = document.querySelector('.theme-toggle-wrapper');
+    if (toggleWrapper) {
+        toggleWrapper.addEventListener('click', (e) => {
+            e.stopPropagation();  // This stops the click from reaching main-content listener
+        });
+    }
+
+    // Live system updates only if no manual override
     window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        if (!localStorage.getItem('theme')) {  // Only react if user hasn't overridden
+        if (!localStorage.getItem('theme')) {
             applyTheme(e.matches ? 'dark' : 'light');
         }
     });

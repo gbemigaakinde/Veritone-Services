@@ -543,18 +543,18 @@ a:hover {
 .form-message.error {
     color: #9b2226;
 }
-/* Dark Mode Overrides - FINAL FIXED VERSION */
+/* Dark Mode Overrides - EYE-FRIENDLY VERSION */
 html.dark {
     --bg-color: #0f0f0f;          /* Deep dark background */
     --sidebar-bg: #1a1a1a;
-    --text-primary: #ffffff;      /* Pure white main text */
-    --text-secondary: #bbbbbb;
-    --accent-color: #ffffff;
+    --text-primary: #e0e0e0;      /* Soft off-white for main reading text */
+    --text-secondary: #bbbbbb;    /* Medium gray for secondary text (e.g., footer tagline) */
+    --accent-color: #ffffff;      /* Pure white for emphasis and active states */
     --border-color: #333333;
     --hover-color: #ffffff;
 }
 
-/* Ensure all post content text is pure white in dark mode */
+/* Main post content - comfortable, eye-friendly off-white */
 html.dark .post-body,
 html.dark .post-body p,
 html.dark .post-body h1,
@@ -563,20 +563,38 @@ html.dark .post-body h3,
 html.dark .post-body blockquote,
 html.dark .post-info,
 html.dark .post-meta,
+html.dark .post-title,
 html.dark .post-excerpt,
 html.dark .read-more,
 html.dark .back-link a,
 html.dark .loading {
-    color: #ffffff !important;
+    color: #e0e0e0 !important;
 }
 
-/* Subtle blockquote enhancement in dark mode */
+/* Secondary text stays medium gray (as you like in the footer) */
+html.dark .footer-tagline,
+html.dark .footer-links a,
+html.dark .social-icons a,
+html.dark .post-meta,
+html.dark .post-info {
+    color: #bbbbbb;
+}
+
+/* Active/hover states remain bright white for clarity */
+html.dark a:hover,
+html.dark .nav-links a.active,
+html.dark .nav-links a:hover {
+    color: #ffffff;
+}
+
+/* Blockquote - slightly softer text inside */
 html.dark .post-body blockquote {
     background: rgba(255, 255, 255, 0.05);
     border-left-color: #666666;
+    color: #d0d0d0;
 }
 
-/* Reading progress bar - bright in dark mode */
+/* Reading progress bar - bright white */
 html.dark #reading-progress {
     background-color: #ffffff;
 }
@@ -604,7 +622,7 @@ body, #sidebar, a, .post-preview, .post-body blockquote, #reading-progress,
     padding: 1rem 0;
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
-    user-select: none; /* Prevents accidental text selection */
+    user-select: none;
     cursor: default;
 }
 
@@ -619,7 +637,7 @@ body, #sidebar, a, .post-preview, .post-body blockquote, #reading-progress,
     color: var(--text-secondary);
     font-weight: 500;
     user-select: none;
-    cursor: default; /* Not clickable */
+    cursor: default;
 }
 
 .theme-toggle {
@@ -642,7 +660,7 @@ body, #sidebar, a, .post-preview, .post-body blockquote, #reading-progress,
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #999;           /* Neutral off state */
+    background-color: #999;
     transition: 0.4s;
     border-radius: 30px;
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
@@ -661,7 +679,7 @@ body, #sidebar, a, .post-preview, .post-body blockquote, #reading-progress,
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
-/* When toggle is ON - Bright blue for obvious feedback */
+/* Toggle ON - bright blue */
 input:checked + .slider {
     background-color: #4a9eff;
 }

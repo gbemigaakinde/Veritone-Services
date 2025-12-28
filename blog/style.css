@@ -604,6 +604,14 @@ body, #sidebar, a, .post-preview, .post-body blockquote, #reading-progress,
     padding: 1rem 0;
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
+    user-select: none; /* Prevents accidental text selection */
+    cursor: default;
+}
+
+/* Prevent sidebar from closing when clicking the toggle */
+.theme-toggle-wrapper,
+.theme-toggle-wrapper * {
+    pointer-events: auto;
 }
 
 .theme-toggle-label {
@@ -652,9 +660,9 @@ body, #sidebar, a, .post-preview, .post-body blockquote, #reading-progress,
     box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
-/* When toggle is ON (checked) - Bright blue for obvious feedback */
+/* When toggle is ON - Bright blue for obvious feedback */
 input:checked + .slider {
-    background-color: #4a9eff;         /* Vibrant blue when dark mode is ON */
+    background-color: #4a9eff;
 }
 
 input:checked + .slider:before {
@@ -666,13 +674,13 @@ input:checked + .slider:before {
     box-shadow: 0 0 0 3px rgba(74, 158, 255, 0.3);
 }
 
-/* Even better contrast in dark mode */
-html.dark input:checked + .slider {
-    background-color: #4a9eff;
-}
-
+/* Better contrast in dark mode */
 html.dark .slider {
     background-color: #444;
+}
+
+html.dark input:checked + .slider {
+    background-color: #4a9eff;
 }
 
 /* Mobile adjustments */

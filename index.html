@@ -106,6 +106,19 @@
         .floating-wa {
             animation: pulse 2s infinite;
         }
+        .reveal-text {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+.reveal-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.hero-bg {
+    background-attachment: fixed; /* Parallax effect */
+    background-position: center;
+}
     </style>
 </head>
 <body class="antialiased">
@@ -152,16 +165,19 @@
     </nav>
 
 <!-- Hero Section with Background Image & Parallax -->
-<section class="hero-bg flex items-center justify-center text-center relative">
-    <div class="absolute inset-0 bg-black/40"></div>
+<section class="hero-bg relative overflow-hidden flex items-center justify-center text-center">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
     <div class="relative z-10 max-w-5xl mx-auto px-6 pt-32 pb-32">
-        <h1 class="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight animate-fade-in">
-            Words that Win.<br>Brands that Speak.
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
+            <span class="block reveal-text" data-delay="0">Words that</span>
+            <span class="block reveal-text gradient-text" data-delay="300">Win.</span>
+            <span class="block reveal-text" data-delay="600">Brands that</span>
+            <span class="block reveal-text gradient-text" data-delay="900">Speak.</span>
         </h1>
-        <p class="text-2xl md:text-3xl text-white/90 max-w-4xl mx-auto mb-12">
-            Premium writing and communications agency in Nigeria – ghostwriting, editing, corporate narratives, publishing, and social media mastery.
+        <p class="text-2xl md:text-3xl text-white/90 max-w-4xl mx-auto mb-12 reveal-text" data-delay="1200">
+            Premium writing and communications agency in Nigeria – ghostwriting, editing, corporate communications, publishing, and social media management.
         </p>
-        <div class="flex flex-col md:flex-row gap-6 justify-center">
+        <div class="flex flex-col md:flex-row gap-6 justify-center reveal-text" data-delay="1500">
             <a href="home/contact.html" class="bg-white text-primary px-10 py-5 rounded-full font-semibold hover:bg-gray-100 transition shadow-lg">Get a Free Quote</a>
             <a href="#services" class="border-2 border-white text-white px-10 py-5 rounded-full font-semibold hover:bg-white hover:text-primary transition">Explore Services</a>
         </div>
@@ -458,5 +474,13 @@
             });
         });
     </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const reveals = document.querySelectorAll('.reveal-text');
+        reveals.forEach(el => {
+            setTimeout(() => el.classList.add('visible'), el.dataset.delay);
+        });
+    });
+</script>
 </body>
 </html>

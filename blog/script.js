@@ -312,3 +312,27 @@ if (document.getElementById('contact-form')) {
         // Example with Formspree: set action="https://formspree.io/f/your-id"
     });
 }
+// Dark/Light Mode Toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const themeSwitch = document.getElementById('theme-switch');
+
+    if (!themeSwitch) return;
+
+    // Load saved theme or respect system preference
+    if (localStorage.getItem('theme') === 'dark' || 
+        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        themeSwitch.checked = true;
+    }
+
+    // Toggle event
+    themeSwitch.addEventListener('change', () => {
+        if (themeSwitch.checked) {
+            document.documentElement.classList.add('dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+});

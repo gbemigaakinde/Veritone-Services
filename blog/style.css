@@ -709,24 +709,24 @@ html.dark input:checked + .slider {
         padding-right: 1rem;
     }
 }
-/* Perfect Hamburger → X Animation - FINAL FIXED VERSION */
+/* Perfect Hamburger → X Animation - FINAL VERSION */
 .hamburger-icon {
-  width: 40px;    /* Consistent size */
+  width: 40px;
   height: 40px;
   display: block;
 }
 
 .hamburger-icon .line {
-  stroke: currentColor;                 /* Uses text color - works in light/dark */
-  stroke-width: 10;                     /* Slightly thinner for elegance */
+  stroke: currentColor;
+  stroke-width: 10;
   stroke-linecap: round;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
   transform-origin: center;
 }
 
-/* Active state: Perfect centered X */
+/* Perfect centered X */
 #sidebar-toggle.active .line-1 {
-  transform: rotate(45deg) translate(17px, 17px);   /* Adjusted for perfect cross */
+  transform: rotate(45deg) translate(17px, 17px);
 }
 
 #sidebar-toggle.active .line-2 {
@@ -734,35 +734,36 @@ html.dark input:checked + .slider {
 }
 
 #sidebar-toggle.active .line-3 {
-  transform: rotate(-45deg) translate(17px, -17px); /* Adjusted for perfect cross */
+  transform: rotate(-45deg) translate(17px, -17px);
 }
 
-/* Hover effect - subtle scale */
+/* Subtle hover scale */
 #sidebar-toggle:hover .hamburger-icon {
   transform: scale(1.1);
   transition: transform 0.2s ease;
 }
 
-/* Mobile toggle button styling */
+/* Mobile toggle button - NOW PERFECTLY MATCHES SITE BACKGROUND */
 .mobile-toggle {
   display: none;
   position: fixed;
   top: 1.5rem;
   left: 1.5rem;
   z-index: 200;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border: none;
+  background: var(--bg-color);                    /* Exact site background */
+  backdrop-filter: blur(12px);                    /* Premium glass effect */
+  -webkit-backdrop-filter: blur(12px);            /* Safari support */
+  border: 1px solid var(--border-color);          /* Adapts to theme */
   border-radius: 12px;
   padding: 0.75rem;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
 }
 
 .mobile-toggle:hover {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
-  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
 }
 
 @media (max-width: 768px) {
@@ -771,8 +772,11 @@ html.dark input:checked + .slider {
   }
 }
 
-/* Dark mode support */
+/* Enhanced depth in dark mode */
 html.dark .mobile-toggle {
-  background: rgba(26, 26, 26, 0.95);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+html.dark .mobile-toggle:hover {
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.7);
 }

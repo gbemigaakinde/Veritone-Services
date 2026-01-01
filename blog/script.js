@@ -369,3 +369,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const button = document.querySelector('button[aria-label="Toggle menu"]');
+  if (!button) return;
+
+  const scope = Alpine.$data(button);
+
+  Alpine.effect(() => {
+    button.classList.toggle('active', scope.open);
+  });
+});

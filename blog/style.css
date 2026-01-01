@@ -709,9 +709,9 @@ html.dark input:checked + .slider {
         padding-right: 1rem;
     }
 }
-/* Perfect Hamburger → X Animation - ULTIMATE MINIMALIST VERSION */
+/* Perfect Hamburger → X Animation - PURE MINIMALIST FINAL */
 .hamburger-icon {
-  width: 32px;      /* Compact, elegant size */
+  width: 32px;
   height: 32px;
   display: block;
 }
@@ -737,29 +737,17 @@ html.dark input:checked + .slider {
   transform: rotate(-45deg) translate(17px, -17px);
 }
 
-/* Subtle hover scale */
-#sidebar-toggle:hover .hamburger-icon {
-  transform: scale(1.1);
-  transition: transform 0.2s ease;
-}
-
-/* Mobile toggle button - COMPLETELY TRANSPARENT & SEAMLESS */
+/* Mobile toggle button - ABSOLUTELY MINIMAL */
 .mobile-toggle {
   display: none;
   position: fixed;
   top: 1.5rem;
   left: 1.5rem;
   z-index: 200;
-  background: transparent;                /* No background — fully blends */
-  border: none;                           /* No border */
-  border-radius: 8px;
-  padding: 0.75rem;                       /* Comfortable tap area */
+  background: transparent;
+  border: none;
+  padding: 0.75rem;           /* Only for comfortable touch target */
   cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.mobile-toggle:hover {
-  transform: scale(1.1);                  /* Only feedback: subtle grow */
 }
 
 @media (max-width: 768px) {
@@ -768,17 +756,4 @@ html.dark input:checked + .slider {
   }
 }
 
-/* Optional: Very subtle ring on hover for feedback (pure minimalism) */
-.mobile-toggle:hover::after {
-  content: '';
-  position: absolute;
-  inset: -4px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
-  pointer-events: none;
-  opacity: 0.6;
-}
-
-html.dark .mobile-toggle:hover::after {
-  border-color: rgba(255, 255, 255, 0.15);
-}
+/* No hover effects at all — pure invisibility when not in use */

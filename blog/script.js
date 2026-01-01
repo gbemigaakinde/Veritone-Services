@@ -126,7 +126,7 @@ function initSidebar() {
     mainContent.addEventListener('click', () => {
     if (window.innerWidth <= 768 && sidebar.classList.contains('active')) {
         sidebar.classList.remove('active');
-        toggle.classList.remove('active');   // ← ADD THIS LINE
+        toggle.classList.remove('active');   // ← This fixes the stuck X
     }
 });
 
@@ -156,10 +156,11 @@ function initSidebar() {
             // Filter posts
             filterPosts(filter);
             
-            // Close mobile sidebar
-            if (window.innerWidth <= 768) {
-                sidebar.classList.remove('active');
-            }
+           // Inside the link click handler
+if (window.innerWidth <= 768) {
+    sidebar.classList.remove('active');
+    toggle.classList.remove('active');   // ← Add this
+}
         });
     });
 }

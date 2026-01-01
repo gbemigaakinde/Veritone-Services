@@ -65,6 +65,26 @@
         @media (max-width: 640px) {
             .masonry-grid { column-count: 1; }
         }
+        /* Perfect Hamburger → X Animation */
+.hamburger-icon .line {
+  stroke: currentColor;
+  stroke-width: 12;
+  stroke-linecap: round;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  transform-origin: center;
+}
+
+button[aria-label="Toggle menu"].active .line-1 {
+  transform: rotate(45deg) translateY(25px);
+}
+
+button[aria-label="Toggle menu"].active .line-2 {
+  opacity: 0;
+}
+
+button[aria-label="Toggle menu"].active .line-3 {
+  transform: rotate(-45deg) translateY(-25px);
+}
     </style>
 </head>
 <body class="antialiased">
@@ -89,9 +109,13 @@
             </ul>
             <!-- Mobile Menu -->
             <div x-data="{ open: false }" class="md:hidden">
-                <button @click="open = !open" class="text-primary">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                </button>
+                <button @click="open = !open" class="text-primary focus:outline-none" aria-label="Toggle menu">
+    <svg class="hamburger-icon w-8 h-8" viewBox="0 0 100 100">
+        <line class="line line-1" x1="15" y1="25" x2="85" y2="25" stroke="currentColor" stroke-width="12" stroke-linecap="round"/>
+        <line class="line line-2" x1="15" y1="50" x2="85" y2="50" stroke="currentColor" stroke-width="12" stroke-linecap="round"/>
+        <line class="line line-3" x1="15" y1="75" x2="85" y2="75" stroke="currentColor" stroke-width="12" stroke-linecap="round"/>
+    </svg>
+</button>
                 <ul x-show="open" @click.away="open = false" class="absolute top-20 right-4 glass border border-gray-200 rounded-xl py-6 px-8 shadow-2xl min-w-64 space-y-4">
                     <li><a href="../index.html" class="block text-primary hover:text-accent">Home</a></li>
                     <li><a href="../#services" class="block text-primary hover:text-accent">What We Do</a></li>
@@ -279,6 +303,17 @@
             });
         });
     </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const button = document.querySelector('button[aria-label="Toggle menu"]');
+  if (!button) return;
 
+  const scope = Alpine.$data(button);
+
+  Alpine.effect(() => {
+    button.classList.toggle('active', scope.open);
+  });
+});
+</script>
 </body>
 </html>

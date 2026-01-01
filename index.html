@@ -119,14 +119,17 @@
     background-attachment: fixed; /* Parallax effect */
     background-position: center;
 }
-        /* Smooth Hamburger → X Animation */
+/* Perfect Hamburger → X Animation */
 .hamburger-icon .line {
-  fill: currentColor;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  stroke: currentColor;
+  stroke-width: 12;
+  stroke-linecap: round;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+  transform-origin: center;
 }
 
 button[aria-label="Toggle menu"].active .line-1 {
-  transform: translateY(25px) rotate(45deg);
+  transform: rotate(45deg) translateY(25px);
 }
 
 button[aria-label="Toggle menu"].active .line-2 {
@@ -134,7 +137,11 @@ button[aria-label="Toggle menu"].active .line-2 {
 }
 
 button[aria-label="Toggle menu"].active .line-3 {
-  transform: translateY(-25px) rotate(-45deg);
+  transform: rotate(-45deg) translateY(-25px);
+}
+button[aria-label="Toggle menu"]:hover .hamburger-icon {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
 }
     </style>
 </head>
@@ -163,9 +170,9 @@ button[aria-label="Toggle menu"].active .line-3 {
             <div x-data="{ open: false }" class="md:hidden">
                 <button @click="open = !open" class="text-primary focus:outline-none" aria-label="Toggle menu">
     <svg class="hamburger-icon w-8 h-8" viewBox="0 0 100 100">
-        <rect class="line line-1" width="80" height="10" x="10" y="20" rx="5" fill="currentColor"></rect>
-        <rect class="line line-2" width="80" height="10" x="10" y="45" rx="5" fill="currentColor"></rect>
-        <rect class="line line-3" width="80" height="10" x="10" y="70" rx="5" fill="currentColor"></rect>
+        <line class="line line-1" x1="15" y1="25" x2="85" y2="25" stroke="currentColor" stroke-width="12" stroke-linecap="round"/>
+        <line class="line line-2" x1="15" y1="50" x2="85" y2="50" stroke="currentColor" stroke-width="12" stroke-linecap="round"/>
+        <line class="line line-3" x1="15" y1="75" x2="85" y2="75" stroke="currentColor" stroke-width="12" stroke-linecap="round"/>
     </svg>
 </button>
                 <ul x-show="open" @click.away="open = false" class="absolute top-20 right-4 glass border border-gray-200 rounded-xl py-6 px-8 shadow-2xl min-w-64 space-y-4">
@@ -503,7 +510,7 @@ button[aria-label="Toggle menu"].active .line-3 {
         });
     });
 </script>
-    <script>
+<script>
 document.addEventListener('DOMContentLoaded', () => {
   const button = document.querySelector('button[aria-label="Toggle menu"]');
   if (!button) return;

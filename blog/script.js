@@ -124,10 +124,11 @@ function initSidebar() {
     const mainContent = document.getElementById('main-content');
     
     mainContent.addEventListener('click', () => {
-        if (window.innerWidth <= 768 && sidebar.classList.contains('active')) {
-            sidebar.classList.remove('active');
-        }
-    });
+    if (window.innerWidth <= 768 && sidebar.classList.contains('active')) {
+        sidebar.classList.remove('active');
+        toggle.classList.remove('active');   // ← ADD THIS LINE
+    }
+});
 
     toggle.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -136,10 +137,11 @@ function initSidebar() {
 });
 
     window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-            sidebar.classList.remove('active');
-        }
-    });
+    if (window.innerWidth > 768) {
+        sidebar.classList.remove('active');
+        toggle.classList.remove('active');   // ← ADD THIS
+    }
+});
 
     // Category filtering on homepage
     document.querySelectorAll('.nav-links a[data-filter]').forEach(link => {

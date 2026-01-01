@@ -709,17 +709,24 @@ html.dark input:checked + .slider {
         padding-right: 1rem;
     }
 }
-/* Perfect Hamburger Animation for Blog */
+/* Perfect Hamburger → X Animation - FINAL FIXED VERSION */
+.hamburger-icon {
+  width: 40px;    /* Consistent size */
+  height: 40px;
+  display: block;
+}
+
 .hamburger-icon .line {
-  stroke: currentColor;
-  stroke-width: 12;
+  stroke: currentColor;                 /* Uses text color - works in light/dark */
+  stroke-width: 10;                     /* Slightly thinner for elegance */
   stroke-linecap: round;
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
   transform-origin: center;
 }
 
+/* Active state: Perfect centered X */
 #sidebar-toggle.active .line-1 {
-  transform: rotate(45deg) translateY(25px);
+  transform: rotate(45deg) translate(17px, 17px);   /* Adjusted for perfect cross */
 }
 
 #sidebar-toggle.active .line-2 {
@@ -727,7 +734,13 @@ html.dark input:checked + .slider {
 }
 
 #sidebar-toggle.active .line-3 {
-  transform: rotate(-45deg) translateY(-25px);
+  transform: rotate(-45deg) translate(17px, -17px); /* Adjusted for perfect cross */
+}
+
+/* Hover effect - subtle scale */
+#sidebar-toggle:hover .hamburger-icon {
+  transform: scale(1.1);
+  transition: transform 0.2s ease;
 }
 
 /* Mobile toggle button styling */
@@ -737,16 +750,29 @@ html.dark input:checked + .slider {
   top: 1.5rem;
   left: 1.5rem;
   z-index: 200;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   border: none;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 0.75rem;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+.mobile-toggle:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 768px) {
   .mobile-toggle {
     display: block;
   }
+}
+
+/* Dark mode support */
+html.dark .mobile-toggle {
+  background: rgba(26, 26, 26, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }

@@ -709,9 +709,9 @@ html.dark input:checked + .slider {
         padding-right: 1rem;
     }
 }
-/* Perfect Hamburger → X Animation - FINAL POLISHED VERSION */
+/* Perfect Hamburger → X Animation - ULTIMATE MINIMALIST VERSION */
 .hamburger-icon {
-  width: 32px;      /* Back to original compact size (was w-8 h-8 = 32px) */
+  width: 32px;      /* Compact, elegant size */
   height: 32px;
   display: block;
 }
@@ -743,27 +743,23 @@ html.dark input:checked + .slider {
   transition: transform 0.2s ease;
 }
 
-/* Mobile toggle button - EXACT BACKGROUND MATCH + COMPACT */
+/* Mobile toggle button - COMPLETELY TRANSPARENT & SEAMLESS */
 .mobile-toggle {
   display: none;
   position: fixed;
   top: 1.5rem;
   left: 1.5rem;
   z-index: 200;
-  background: var(--bg-color);                    /* 100% match: #fcfcfc light / #0f0f0f dark */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border-color);          /* Adapts perfectly */
-  border-radius: 10px;                            /* Slightly smaller radius for compact feel */
-  padding: 0.5rem;                                /* Reduced padding for smaller button */
+  background: transparent;                /* No background — fully blends */
+  border: none;                           /* No border */
+  border-radius: 8px;
+  padding: 0.75rem;                       /* Comfortable tap area */
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .mobile-toggle:hover {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
-  transform: translateY(-2px);
+  transform: scale(1.1);                  /* Only feedback: subtle grow */
 }
 
 @media (max-width: 768px) {
@@ -772,11 +768,17 @@ html.dark input:checked + .slider {
   }
 }
 
-/* Dark mode: deeper shadow for depth on pure black */
-html.dark .mobile-toggle {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+/* Optional: Very subtle ring on hover for feedback (pure minimalism) */
+.mobile-toggle:hover::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  pointer-events: none;
+  opacity: 0.6;
 }
 
-html.dark .mobile-toggle:hover {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+html.dark .mobile-toggle:hover::after {
+  border-color: rgba(255, 255, 255, 0.15);
 }

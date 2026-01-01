@@ -709,7 +709,7 @@ html.dark input:checked + .slider {
         padding-right: 1rem;
     }
 }
-/* Perfect Hamburger → X Animation */
+/* Perfect Hamburger Animation for Blog */
 .hamburger-icon .line {
   stroke: currentColor;
   stroke-width: 12;
@@ -718,18 +718,35 @@ html.dark input:checked + .slider {
   transform-origin: center;
 }
 
-button[aria-label="Toggle menu"].active .line-1 {
+#sidebar-toggle.active .line-1 {
   transform: rotate(45deg) translateY(25px);
 }
 
-button[aria-label="Toggle menu"].active .line-2 {
+#sidebar-toggle.active .line-2 {
   opacity: 0;
 }
 
-button[aria-label="Toggle menu"].active .line-3 {
+#sidebar-toggle.active .line-3 {
   transform: rotate(-45deg) translateY(-25px);
 }
-button[aria-label="Toggle menu"]:hover .hamburger-icon {
-  transform: scale(1.1);
-  transition: transform 0.2s ease;
+
+/* Mobile toggle button styling */
+.mobile-toggle {
+  display: none;
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  z-index: 200;
+  background: rgba(255,255,255,0.9);
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+  .mobile-toggle {
+    display: block;
+  }
 }

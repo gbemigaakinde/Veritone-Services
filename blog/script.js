@@ -130,9 +130,10 @@ function initSidebar() {
     });
 
     toggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        sidebar.classList.toggle('active');
-    });
+    e.stopPropagation();
+    sidebar.classList.toggle('active');
+    toggle.classList.toggle('active');   // ← ADD THIS LINE ONLY
+});
 
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768) {
